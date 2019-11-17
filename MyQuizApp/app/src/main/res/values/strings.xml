@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Lost and Found App</string>
+    <string name="question_message_text">In the field of User Interface Design, solving the wrong problem is better than having no solution.</string>
+    <string name="true_button_text">TRUE</string>
+    <string name="false_button_text">FALSE</string>
+    <string name="title_activity_show_answer">Sign Up</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="my_lost_items">My Lost Items</string>
+    <string name="found">Found</string>
+    <string name="lost">Lost</string>
+    <string name="location">Location:   </string>
+    <string name="use_a_different_location">Use a different Location?</string>
+</resources>
