@@ -2,18 +2,321 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/lost_view"
+    android:clickable="true">
 
-    <TextView
-        android:id="@+id/text_gallery"
+<!--    <TextView-->
+<!--        android:id="@+id/text_gallery"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="8dp"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="8dp"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="20sp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/locations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Locations:"
+                    android:textStyle="bold"
+                    android:textColor="#414040"
+                    android:textColorHighlight="@android:color/primary_text_dark"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:id="@+id/Loc"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft = "true"
+                    android:layout_below="@+id/locations"
+                    android:src = "@drawable/location"/>
+
+                <EditText
+                    android:id="@+id/addLoc"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/locations"
+                    android:layout_toRightOf="@+id/Loc"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="19dp"
+                    android:hint="Add Location"/>
+
+                <ImageButton
+                    android:id="@+id/addLocation"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/addLoc"
+                    android:layout_below="@+id/locations"
+                    android:background="#FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src = "@drawable/add_icon"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/dateLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/times"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Time:"
+                    android:textStyle="bold"
+                    android:textColor="#414040"
+                    android:textColorHighlight="@android:color/primary_text_dark"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:id="@+id/Calendar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft = "true"
+                    android:layout_below = "@+id/times"
+                    android:src = "@drawable/calender"/>
+
+                <TextView
+                    android:id="@+id/addDate"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/Calendar"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below = "@+id/times"
+                    android:textSize="19dp"
+                    android:hint="Add Date"/>
+
+                <View
+                    android:layout_width="240dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="60dp"
+                    android:background="#363636"/>
+
+                <ImageButton
+                    android:id="@+id/add2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/addDate"
+                    android:layout_below = "@+id/times"
+                    android:background="#FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src = "@drawable/add_icon"
+                    />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/category_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Category:"
+                android:textStyle="bold"
+                android:textColor="#414040"
+                android:textColorHighlight="@android:color/primary_text_dark"
+                android:textSize="20sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                >
+
+                <ImageView
+                    android:id="@+id/category"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentLeft = "true"
+                    android:layout_alignParentTop= "true"
+                    android:src = "@drawable/category"/>
+
+                <TextView
+                    android:id="@+id/addCategory"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/category"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignBottom="@+id/line_category"
+                    android:textSize="19dp"
+                    android:hint="Choose Category"/>
+
+                <View
+                    android:id="@+id/line_category"
+                    android:layout_width="240dp"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="40dp"
+                    android:background="#363636"/>
+
+                <ImageButton
+                    android:id="@+id/add3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/addCategory"
+                    android:background="#FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src = "@drawable/add_icon"
+                    />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="16dp">
+
+            <TextView
+                android:id="@+id/main_features_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="Main features:"
+                android:textStyle="bold"
+                android:textColor="#414040"
+                android:textColorHighlight="@android:color/primary_text_dark"
+                android:textSize="20sp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                >
+
+                <ImageView
+                    android:id="@+id/mF"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft = "true"
+                    android:layout_alignParentTop= "true"
+                    android:layout_marginLeft="5dp"
+                    android:src = "@drawable/features"/>
+
+                <EditText
+                    android:id="@+id/mainFeature"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/mF"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:textSize="19dp"
+                    android:hint="Add Main Features"/>
+
+                <ImageButton
+                    android:id="@+id/addMainFeature"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_toRightOf="@+id/mainFeature"
+                    android:background="#FFFFFF"
+                    android:scaleType="fitXY"
+                    android:src = "@drawable/add_icon"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingBottom="10dp"
+            android:orientation="vertical"
+            android:gravity="start">
+
+            <TextView
+                android:id="@+id/additional_features_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional features:"
+                android:textStyle="bold"
+                android:textColor="#414040"
+                android:textColorHighlight="@android:color/primary_text_dark"
+                android:textSize="20sp"/>
+
+            <EditText
+                android:id="@+id/additional_features_edt_id"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="10dp"
+                android:padding="10dp"
+                android:minLines="10"
+                android:gravity="top"
+                android:background="@drawable/additional_features_background"
+                android:textSize="18sp"
+                android:hint="Please describe more information here."/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/submit_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:background="#009688"
+            android:text="Submit"
+            android:textColor="#ffff"/>
+
+    </LinearLayout>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
